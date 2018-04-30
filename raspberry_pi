@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# General
+## RASPBIAN STRETCH LITE 
+## SHA-256:5a0747b2bfb8c8664192831b7dc5b22847718a1cb77639a1f3db3683b242dc96
+### Version: April 2018
+### Release date: 2018-04-18
+### Kernel version: 4.14
+### https://downloads.raspberrypi.org/raspbian_lite_latest
+
+# Setup WiFi connection
+# sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+# network={
+#    ssid="testing"
+#    psk="testingPassword"
+# }
+
+# Enable SSH
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+# Update and Upgrade the system
+sudo apt update
+sudo apt -y dist-upgrade
+sudo apt -y autoremove
+sudo apt clean
+
+# Install basic software
+sudo apt install samba -y
