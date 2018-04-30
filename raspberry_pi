@@ -28,3 +28,25 @@ sudo apt clean
 
 # Install basic software
 sudo apt install samba -y
+sudo apt-get install samba-client -y
+# Change hostname to xserve
+# sudo nano /etc/hostname
+# sudo nano /etc/hosts
+
+
+# Smb share
+# [Storage]
+#   Comment = Storage area
+#   path = /media/Storage
+#   browsable = yes
+#   read only = no
+#   guest ok = no
+#   chreate mask = 0777
+
+sudo mkdir /media/Storage
+sudo chmod 777 /media/Storage/
+sudo /etc/init.d/samba restart
+sudo smbpasswd -a pi
+
+sudo pdbedit -w -L
+
