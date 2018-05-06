@@ -1,2 +1,2 @@
 # Server-configuration
-Tracking installed software and config of the IT Infrastructure
+Tracking installed software and configuration of the IT Infrastructure
